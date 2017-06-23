@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest Git</title>
+
+    Shikhar's last commit was on: 
+
+    <div id="data"> </div>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("data").innerHTML = JSON.parse(this.responseText).commit.author.date;
+            }
+        };
+        xhttp.open("GET", "https://api.github.com/repos/shiksb/node-school/commits/master", true);
+        xhttp.send();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
