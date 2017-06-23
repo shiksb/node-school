@@ -12,7 +12,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("data").innerHTML = JSON.parse(this.responseText).commit.author.date;
+                document.getElementById("data").innerHTML = JSON.parse(this.responseText).commit.author.date.replace('T',' at time  ');
             }
         };
         xhttp.open("GET", "https://api.github.com/repos/shiksb/node-school/commits/master", true);
